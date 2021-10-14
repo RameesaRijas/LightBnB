@@ -20,6 +20,9 @@ $(() => {
           <footer class="property-listing__footer">
             <div class="property-listing__rating">${Math.round(property.average_rating * 100) / 100}/5 stars</div>
             <div class="property-listing__price">$${property.cost_per_night/100.0}/night</div>
+            <br>
+            ${ isReservation ? `` :            
+            `<button class="property_reservation" id="${property.id}">Make Reservation</button> `}
           </footer>
         </section>
       </article>
@@ -27,5 +30,4 @@ $(() => {
   }
 
   window.propertyListing.createListing = createListing;
-
 });
